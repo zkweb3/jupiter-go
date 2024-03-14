@@ -1,5 +1,5 @@
 test:
-	go test -race -v ./...
+	go mod tidy && go test -race -v ./...
 
 generate-openapi:
 	oapi-codegen -package jupiter -generate client,types ./jupiter/openapi/jupiter-swagger.yaml > ./jupiter/client.gen.go
